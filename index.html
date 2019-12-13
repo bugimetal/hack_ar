@@ -14,7 +14,8 @@
             <a-box position='0 0.5 0' material='color: red;'></a-box>
         </a-marker>        
         <a-marker type="pattern" url="do.patt">
-            <a-entity rotation="45 0 0">
+            <a-entity id="rig" position="25 10 0">
+                <a-camera id="camera"></a-camera>
                 <a-video src="vid1.mp4" repeat="none"></a-video>
             </a-entity>
         </a-marker>
