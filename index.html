@@ -13,7 +13,7 @@
 AFRAME.registerComponent('markerhandler', {
 
     init: function() {
-        alert("starting");
+        // alert("starting");
 
       // Set up the tick throttling. Will check if marker is active every 500ms
       this.tick = AFRAME.utils.throttleTick(this.tick, 1000, this);
@@ -23,7 +23,7 @@ AFRAME.registerComponent('markerhandler', {
   
       if (document.querySelector("#doMarker").object3D.visible == true && markerDetected == false) {
         // MARKER IS PRESENT
-        alert("MARKER IS PRESENT")
+        // alert("MARKER IS PRESENT")
   
             video = document.querySelector('#video');
         //   ARObject01 = document.querySelector('#AR-Object01');
@@ -32,8 +32,9 @@ AFRAME.registerComponent('markerhandler', {
   
         // ARObject01.addEventListener('click', function () { console.log("object01 clickable in AR"); alert("object01 clickable in AR")});
         // ARObject02.addEventListener('click', function () { console.log("object02 clickable in AR"); alert("object02 clickable in AR") });
-        videoScreen.addEventListener('click', function () { alert("video screen clicked"); playPauseVideo(); console.log("Video Play Toggle") });
+        videoScreen.addEventListener('click', function () {  playPauseVideo(); console.log("Video Play Toggle") });
         markerDetected = true;
+        playPauseVideo();
     //   } else {
     //     // MARKER IS HIDDEN, do nothing (up to you)
       }
