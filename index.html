@@ -4,11 +4,11 @@
 <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
 <script>
 
-        var scene
+        var video
         var ARObject01
         var ARObject02
         var ARVideoScreen
-        var playing = false
+        var markerDetected = false
 
 AFRAME.registerComponent('markerhandler', {
 
@@ -21,19 +21,19 @@ AFRAME.registerComponent('markerhandler', {
   
     tick: function(t, dt) {
   
-      if (document.querySelector("#doMarker").object3D.visible == true && playing == false) {
+      if (document.querySelector("#doMarker").object3D.visible == true && markerDetected == false) {
         // MARKER IS PRESENT
         alert("MARKER IS PRESENT")
   
-    //         scene = document.querySelector('#a-scene');
+            video = document.querySelector('#video');
           ARObject01 = document.querySelector('#AR-Object01');
           ARObject02 = document.querySelector('#AR-Object02');
-    //     // ARVideoScreen =  document.querySelector('#videoScreen');
+        ARVideoScreen =  document.querySelector('#videoScreen');
   
         ARObject01.addEventListener('click', function () { console.log("object01 clickable in AR"); alert("object01 clickable in AR")});
         ARObject02.addEventListener('click', function () { console.log("object02 clickable in AR"); alert("object02 clickable in AR") });
-    //     // videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
-        playing = true;
+        videoScreen.addEventListener('click', function () { alert("video screen clicked"); playPauseVideo(); console.log("Video Play Toggle") });
+        markerDetected = true;
     //   } else {
     //     // MARKER IS HIDDEN, do nothing (up to you)
       }
@@ -69,10 +69,10 @@ AFRAME.registerComponent('markerhandler', {
 
         <a-marker type="pattern" url="do.patt" markerhandler emitevents="true" id="doMarker">
 
-                <a-box id="AR-Object01" position='0.5 0.5 0' material='color: red;'></a-box>
-                <a-box id="AR-Object02" position='-0.5 0.5 0' material='color: blue;'></a-box>
+                <a-box id="AR-Object01" position='0.5 0.2 0' material='color: red;'></a-box>
+                <a-box id="AR-Object02" position='-0.5 0.2 0' material='color: blue;'></a-box>
             
-                <!-- <a-video id="videoScreen" src="#video" width="16" height="9" autoplay=true></a-video> -->
+                <a-video id="videoScreen" src="#video" width="16" height="9" autoplay=true></a-video>
 
             <!-- <a-entity id="rig" position="25 10 0">
                 <a-video src="vid1.mp4" repeat="none"></a-video>
