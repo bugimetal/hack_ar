@@ -12,30 +12,32 @@
 AFRAME.registerComponent('markerhandler', {
 
     init: function() {
-  
-      // Set up the tick throttling. Will check if marker is active every 500ms
-      this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
-    },
-  
-    tick: function(t, dt) {
-  
-      if (document.querySelector("#doMarker").object3D.visible == true && playing == false) {
-        // MARKER IS PRESENT
-        //alert("MARKER IS PRESENT")
-  
-            scene = document.querySelector('#a-scene');
-          ARObject01 = document.querySelector('#Object01');
-          ARObject02 = document.querySelector('#Object02');
-        // ARVideoScreen =  document.querySelector('#videoScreen');
-  
         AR-Object01.addEventListener('click', function () { console.log("object01 clickable in AR"); alert("object01 clickable in AR")});
         AR-Object02.addEventListener('click', function () { console.log("object02 clickable in AR"); alert("object02 clickable in AR") });
-        // videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
-        // playing = true;
-      } else {
-        // MARKER IS HIDDEN, do nothing (up to you)
-      }
-    }
+
+      // Set up the tick throttling. Will check if marker is active every 500ms
+    //   this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
+    },
+  
+    // tick: function(t, dt) {
+  
+    //   if (document.querySelector("#doMarker").object3D.visible == true && playing == false) {
+    //     // MARKER IS PRESENT
+    //     //alert("MARKER IS PRESENT")
+  
+    //         scene = document.querySelector('#a-scene');
+    //       ARObject01 = document.querySelector('#Object01');
+    //       ARObject02 = document.querySelector('#Object02');
+    //     // ARVideoScreen =  document.querySelector('#videoScreen');
+  
+    //     // AR-Object01.addEventListener('click', function () { console.log("object01 clickable in AR"); alert("object01 clickable in AR")});
+    //     // AR-Object02.addEventListener('click', function () { console.log("object02 clickable in AR"); alert("object02 clickable in AR") });
+    //     // videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
+    //     // playing = true;
+    //   } else {
+    //     // MARKER IS HIDDEN, do nothing (up to you)
+    //   }
+    // }
   
   });
   
