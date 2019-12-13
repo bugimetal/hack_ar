@@ -72,7 +72,9 @@ AFRAME.registerComponent('markerhandler', {
                 <a-box id="AR-Object01" position='0.5 0.2 0' material='color: red;'></a-box>
                 <a-box id="AR-Object02" position='-0.5 0.2 0' material='color: blue;'></a-box>
             
-                <a-video id="videoScreen" src="#video" width="16" height="9" autoplay=true></a-video>
+          <!-- <a-video position='0 0.1 0' rotation='270 0 0' scale='1 0.5 1' src='/sv.mp4'></a-video> -->
+  	
+                <a-video position='0 0.1 0' rotation='270 0 0' scale='1 0.5 1' id="videoScreen" src="#video" width="16" height="9" autoplay=true></a-video>
 
             <!-- <a-entity id="rig" position="25 10 0">
                 <a-video src="vid1.mp4" repeat="none"></a-video>
