@@ -8,6 +8,7 @@
         var ARObject01
         var ARObject02
         var ARVideoScreen
+        var playing = false
 
 AFRAME.registerComponent('markerhandler', {
 
@@ -15,7 +16,7 @@ AFRAME.registerComponent('markerhandler', {
         alert("starting");
 
       // Set up the tick throttling. Will check if marker is active every 500ms
-      this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
+      this.tick = AFRAME.utils.throttleTick(this.tick, 1000, this);
     },
   
     tick: function(t, dt) {
@@ -25,12 +26,12 @@ AFRAME.registerComponent('markerhandler', {
         alert("MARKER IS PRESENT")
   
     //         scene = document.querySelector('#a-scene');
-          ARObject01 = document.querySelector('#Object01');
-          ARObject02 = document.querySelector('#Object02');
+          ARObject01 = document.querySelector('#AR-Object01');
+          ARObject02 = document.querySelector('#AR-Object02');
     //     // ARVideoScreen =  document.querySelector('#videoScreen');
   
-        AR-Object01.addEventListener('click', function () { console.log("object01 clickable in AR"); alert("object01 clickable in AR")});
-        AR-Object02.addEventListener('click', function () { console.log("object02 clickable in AR"); alert("object02 clickable in AR") });
+        ARObject01.addEventListener('click', function () { console.log("object01 clickable in AR"); alert("object01 clickable in AR")});
+        ARObject02.addEventListener('click', function () { console.log("object02 clickable in AR"); alert("object02 clickable in AR") });
     //     // videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
         playing = true;
     //   } else {
