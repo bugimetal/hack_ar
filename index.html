@@ -26,12 +26,12 @@ AFRAME.registerComponent('markerhandler', {
             scene = document.querySelector('#a-scene');
           ARObject01 = document.querySelector('#Object01');
           ARObject02 = document.querySelector('#Object02');
-        ARVideoScreen =  document.querySelector('#videoScreen');
+        // ARVideoScreen =  document.querySelector('#videoScreen');
   
-        AR-Object01.addEventListener('click', function () { console.log("object01 clickable in AR") });
-        AR-Object02.addEventListener('click', function () { console.log("object02 clickable in AR") });
-        videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
-        playing = true;
+        AR-Object01.addEventListener('click', function () { console.log("object01 clickable in AR"); alert("object01 clickable in AR")});
+        AR-Object02.addEventListener('click', function () { console.log("object02 clickable in AR"); alert("object02 clickable in AR") });
+        // videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
+        // playing = true;
       } else {
         // MARKER IS HIDDEN, do nothing (up to you)
       }
@@ -62,14 +62,15 @@ AFRAME.registerComponent('markerhandler', {
             <a-box position='0 0.5 0' material='color: red;'></a-box>
         </a-marker-camera> -->
         <a-marker type="pattern" url="p2.patt">
-            <a-box position='0 0.5 0' material='color: green;'></a-box>
+            <a-box position='0 0.5 0' material='color: red;'></a-box>
         </a-marker>        
+
         <a-marker type="pattern" url="do.patt" markerhandler emitevents="true" id="doMarker">
 
                 <a-box id="AR-Object01" position='0 0.2 0' material='color: red;'></a-box>
                 <a-box id="AR-Object02" position='0 0.8 0' material='color: blue;'></a-box>
             
-                <a-video id="videoScreen" src="#video" width="16" height="9" autoplay=true></a-video>
+                <!-- <a-video id="videoScreen" src="#video" width="16" height="9" autoplay=true></a-video> -->
 
             <!-- <a-entity id="rig" position="25 10 0">
                 <a-video src="vid1.mp4" repeat="none"></a-video>
